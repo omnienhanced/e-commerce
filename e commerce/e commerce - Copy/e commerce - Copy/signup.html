@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - GreenLoop</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      /* background-color: #f0fff0; */
+      background-image: url('images/background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .signup-container {
+      background-color: #ffffff;
+      border: 2px solid #2e7d32;
+      border-radius: 12px;
+      padding: 30px 25px;
+      width: 320px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .signup-container h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      text-align: center;
+      color: #2e7d32;
+    }
+
+    .signup-container input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .signup-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2e7d32;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .signup-container button:hover {
+      background-color: #276629;
+    }
+
+    .signup-container .extra-link {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .signup-container .extra-link a {
+      color: #2e7d32;
+      text-decoration: none;
+    }
+
+    .signup-container .extra-link a:hover {
+      text-decoration: underline;
+    }
+
+
+
+
+
+    
+
+
+    </style>
+</head>
+<body>
+
+  <div class="signup-container">
+    <h2>Sign Up</h2>
+    <form onsubmit="event.preventDefault(); alert('Account created!');">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="extra-link">
+      Already have an account? <a href="login.html">Login</a>
+    </div>
+  </div>
+
+</body>
+</html>

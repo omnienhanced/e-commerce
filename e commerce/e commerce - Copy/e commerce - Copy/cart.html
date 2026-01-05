@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Cart - GreenLoop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      /* background-color: #f5f5f5; */
+      background-image: url('images/background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      
+    }
+
+    h1 {
+      text-align: center;
+      color: #9acd32;
+    }
+
+    .cart-container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cart-item img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-right: 15px;
+    }
+
+    .cart-info {
+      flex: 1;
+    }
+
+    .cart-info h3 {
+      margin: 0;
+      color: #333;
+    }
+
+    .cart-info p {
+      margin: 4px 0;
+    }
+
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 5px;
+    }
+
+    .qty-btn {
+      padding: 4px 10px;
+      border: none;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .qty-btn:hover {
+      background-color: #388e3c;
+    }
+
+    .remove-btn {
+      background-color: #e53935;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .remove-btn:hover {
+      background-color: #c62828;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 1.3rem;
+      margin-top: 20px;
+    }
+
+    .empty-cart {
+      text-align: center;
+      color: #777;
+      font-size: 1.2rem;
+      margin-top: 50px;
+    }
+
+    .checkout-btn {
+      margin-top: 20px;
+      float: right;
+      background-color: #2e7d32;
+      color: white;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .checkout-btn:hover {
+      background-color: #1b5e20;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Shopping Cart</h1>
+  <div class="cart-container" id="cart-container">
+    <p class="empty-cart">Your cart is empty.</p>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Add quantity if missing
+    cart = cart.map(item => ({
+      ...item,
+      quantity: item.quantity || 1
+    }));
+
+    function saveCart() {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    function renderCart() {
+      const container = document.getElementById("cart-container");
+      container.innerHTML = "";
+
+      if (cart.length === 0) {
+        container.innerHTML = `<p class="empty-cart">Your cart is empty.</p>`;
+        return;
+      }
+
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        total += subtotal;
+
+        const div = document.createElement("div");
+        div.className = "cart-item";
+        div.innerHTML = `
+          <img src="${item.image}" alt="${item.title}">
+          <div class="cart-info">
+            <h3>${item.title}</h3>
+            
+          
+            <p>Price: ₹${item.price.toFixed(2)}</p>
+
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="changeQty(${index}, -1)">-</button>
+              <span>${item.quantity}</span>
+              <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
+            </div>
+            <p><strong>Subtotal:</strong> ₹${subtotal.toFixed(2)}</p>
+            
+
+          </div>
+          <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+        `;
+        container.appendChild(div);
+      });
+
+      const totalDiv = document.createElement("div");
+      totalDiv.className = "total";
+      totalDiv.textContent = `Total: ₹${total.toFixed(2)}`;
+      container.appendChild(totalDiv);
+
+      const checkoutBtn = document.createElement("button");
+      checkoutBtn.className = "checkout-btn";
+      checkoutBtn.textContent = "Proceed to Checkout";
+      checkoutBtn.onclick = () => window.location.href = "checkout.html";
+      container.appendChild(checkoutBtn);
+    }
+
+    function changeQty(index, delta) {
+      cart[index].quantity += delta;
+      if (cart[index].quantity < 1) cart[index].quantity = 1;
+      saveCart();
+      renderCart();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      saveCart();
+      renderCart();
+    }
+
+    document.addEventListener("DOMContentLoaded", renderCart);
+  </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenLoop | Eco-Friendly Products</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- login up-->
+
+
+    <div id="user-info"></div>
+
+
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <!-- <h1 class="logo">GreenLoop</h1> -->
+       <a href="index.html" class="logo">
+       <img src="images/greenloop.png" alt="GreenLoop Logo" class="logo-img">
+       </a>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+         <!-- <li><a href="#">Shop</a></li>-->
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="cart.html">
+  🛒 Cart (<span id="cart-count">0</span>)
+</a>
+</li>
+         
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>Shop Consciously. Live Sustainably.</h2>
+      <p>Discover eco-friendly products that care for you and the planet.</p>
+      <a href="#" class="btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="featured-products">
+    <div class="container">
+      <h3>Featured Products</h3>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200" alt="Organic Cotton T-Shirt">
+          <h4>Organic Cotton T-Shirt</h4>
+          <p>$29.99</p>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200" alt="Bamboo Toothbrush">
+          <h4>Bamboo Toothbrush</h4>
+          <p>$4.99</p>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200" alt="Beeswax Wraps">
+          <h4>Beeswax Wraps</h4>
+          <p>$14.99</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission">
+    <div class="container">
+      <h3>Our Mission</h3>
+      <p>
+        GreenLoop is committed to making sustainable living simple. We curate ethically sourced,
+        planet-friendly products so you can shop with confidence and make a positive impact every day.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 GreenLoop. All rights reserved.</p>
+      <form class="newsletter">
+        <input type="email" placeholder="Your email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </footer>
+
+
+
+
+  <!-- card up-->
+
+  <!-- <button onclick="toggleCart()" class="cart-button">🛒 View Cart (<span id="cart-count">0</span>)</button>
+
+<div id="cart" class="cart-panel hidden">
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+  <p><strong>Total: $<span id="cart-total">0.00</span></strong></p>
+  <button onclick="toggleCart()">Close</button>
+</div> -->
+
+
+
+
+
+
+
+  <!-- ...existing code... -->
+<script src="script.js"></script>
+<!-- ...existing code... -->
+
+
+
+
+<!-- <script>
+  const userInfo = document.getElementById("user-info");
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  if (currentUser) {
+    userInfo.innerHTML = `
+      <p>Welcome, ${currentUser.name}! <button onclick="logout()">Logout</button></p>
+    `;
+  } else {
+    userInfo.innerHTML = `
+      <a href="login.html">Login / Signup</a>
+    `;
+    userInfo.innerHTML = `<a href="login.html" class="btn-login">Login / Signup</a>`;
+    const navList = document.querySelector(".nav ul");
+    if (navList) {
+    const loginItem = document.createElement("li");
+    loginItem.innerHTML = `<a href="login.html" class="btn-login">Login / Signup</a>`;
+    navList.appendChild(loginItem);
+
+  }
+
+  const navList = document.querySelector(".nav ul");
+if (navList) {
+  const loginItem = document.createElement("li");
+  loginItem.innerHTML = `<a href="login.html" class="btn-login">Login / Signup</a>`;
+  navList.appendChild(loginItem);
+}
+
+
+  function logout() {
+    localStorage.removeItem("currentUser");
+    window.location.reload();
+  }
+</script> -->
+
+<!-- <script> -->
+  <!-- document.addEventListener("DOMContentLoaded", () => {
+    const userInfo = document.getElementById("user-info");
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    // if (currentUser) {
+    //   userInfo.innerHTML = `
+    //     <p>Welcome, ${currentUser.name}! <button onclick="logout()">Logout</button></p>
+    //   `;
+    // } else {
+    //   const navList = document.querySelector(".nav ul");
+    //   if (navList) {
+    //     const loginItem = document.createElement("li");
+    //     loginItem.innerHTML = `<a href="login.html" class="btn-login">Login / Signup</a>`;
+    //     navList.appendChild(loginItem);
+    //   }
+    // }
+
+//     if (currentUser) {
+//       const navList = document.querySelector(".nav ul");
+//   if (navList) {
+//   const loginItem = document.createElement("li");
+//   loginItem.innerHTML = `<a href="login.html" class="btn-login-nav">Login / Signup</a>`;
+//   navList.appendChild(loginItem);
+// }
+
+// } else {
+//   userInfo.innerHTML = `
+//     <a href="login.html" class="btn-login-fixed">Login / Signup</a>`;
+// }
+
+
+//     function logout() {
+//       localStorage.removeItem("currentUser");
+//       window.location.reload();
+//     }
+//   }); -->
+<!-- // </script> -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const userInfo = document.getElementById("user-info");
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    if (currentUser) {
+      userInfo.innerHTML = `
+        <p>Welcome, ${currentUser.name}! <button onclick="logout()">Logout</button></p>
+      `;
+    } else {
+      const navList = document.querySelector(".nav ul");
+      if (navList) {
+        const loginItem = document.createElement("li");
+        loginItem.innerHTML = `<a href="login.html" class="btn-login-nav">Login / Signup</a>`;
+        navList.appendChild(loginItem);
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem("currentUser");
+      window.location.reload();
+    }
+  });
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - GreenLoop</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('images/background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: #ffffff;
+      border: 2px solid #2e7d32;
+      border-radius: 12px;
+      padding: 30px 25px;
+      width: 320px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-container h2 {
+      margin-top: 0;
+      margin-bottom: 25px;
+      text-align: center;
+      color: #2e7d32;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2e7d32;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-container button:hover {
+      background-color: #276629;
+    }
+
+    .login-container .extra-link {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .login-container .extra-link a {
+      color: #2e7d32;
+      text-decoration: none;
+    }
+
+    .login-container .extra-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form onsubmit="event.preventDefault(); alert('Logged in!');">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <div class="extra-link">
+      Don't have an account? <a href="signup.html">Sign up</a>
+    </div>
+  </div>
+
+
+
+
+
+  
+ <!---- for back to home butten
+  <style>
+    .extra-link {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .extra-link a {
+      color: #2e7d32;
+      text-decoration: none;
+    }
+    .extra-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+ 
+ <div class="extra-link">
+  <a href="index.html">← Back to Home</a>
+</div>
+ -->
+
+</body>
+</html>
